@@ -1,6 +1,7 @@
 package ToucanSIM
 
 import ToucanSIM.Rocket._
+import ToucanSIM.Physics._
 import ToucanSIM.Simulation._
 
 object Main extends App {
