@@ -13,7 +13,6 @@ object Main extends App {
 	val thrustTime: Double = scala.io.StdIn.readDouble()
 
   val rocket = new Rocket(mass, thrust, thrustTime)
-  rocket.report()
-  
-  val sim = new Simulation()
+
+  val sim = new Simulation(rocket)
 }
