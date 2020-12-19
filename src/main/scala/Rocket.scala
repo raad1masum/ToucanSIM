@@ -22,6 +22,7 @@ object Rocket {
 
     def convert(unit: String) = {
       if (unit == "kg") mass / 1000
+      else if (unit == "N") (mass / 1000) * 9.8
       else "Fatal Error: conversion failed"
     }
   }

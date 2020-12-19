@@ -8,6 +8,7 @@ object Main extends App {
   val rocket = new Rocket(98286580, 450767420, 1451496, 7607000)
 
   println(rocket.convert("kg"))
+  println(rocket.convert("N"))
 
   val sim = new Simulation(rocket)
 }
