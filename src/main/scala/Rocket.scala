@@ -15,11 +15,6 @@ object Rocket {
   	var height: Double = 0.0
   	val gravity: Double = -9.8
 
-    def report() {
-      println("Mass: " + mass)
-      println("Thrust: " + thrust)
-    }
-
     /** Unit conversion
      *
      *  @constructor Converts grams to other units.
@@ -29,6 +24,11 @@ object Rocket {
       if (unit == "kg") mass / 1000
       else if (unit == "N") (mass / 1000) * 9.8
       else "Fatal Error: conversion failed"
+    }
+
+    def report() {
+      println("Mass: " + mass)
+      println("Thrust: " + thrust)
     }
   }
 }
