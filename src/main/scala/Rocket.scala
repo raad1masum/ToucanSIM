@@ -20,6 +20,11 @@ object Rocket {
       println("Thrust: " + thrust)
     }
 
+    /** Unit conversion
+     *
+     *  @constructor Converts grams to other units.
+     *  @param unit Unit to convert to. (kg or N)
+     */
     def convert(unit: String) = {
       if (unit == "kg") mass / 1000
       else if (unit == "N") (mass / 1000) * 9.8
