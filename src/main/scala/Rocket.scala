@@ -37,6 +37,14 @@ object Rocket {
       else -9.8
     }
 
+    /** Calculate current mass
+     *
+     *  @constructor Calculates current mass.
+     */
+    def currentMass() = {
+      if (totalMass >= mass) totalMass + (fuelMass - (consumptionRate * time))
+    }
+
     def report() {
       println("Mass: " + mass)
       println("Thrust: " + thrust)
