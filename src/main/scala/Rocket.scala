@@ -53,6 +53,10 @@ object Rocket {
       time += timeIncrement
     }
 
+    /** Report profile
+     *
+     *  @constructor Reports rocket profile.
+     */
     def report() {
       println(f"Rocket Mass: $mass g")
       println(f"Fuel Mass: $fuelMass g")
