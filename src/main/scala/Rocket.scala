@@ -1,5 +1,13 @@
 package ToucanSIM
 
+/** Create rocket profile
+ *
+ *  @constructor Creates rocket profile.
+ *  @param mass Mass of rocket. (grams)
+ *  @param fuelMass Mass of rocket fuel. (grams)
+ *  @param consumptionRate Rate of fuel consumption. (grams/second)
+ *  @param thrust Thrust of Rocket. (newtons)
+ */
 object Rocket {
   class Rocket(val mass: Double, val fuelMass: Double, val consumptionRate: Double, val thrust: Double) {
   	var increment: Double = 0.01
