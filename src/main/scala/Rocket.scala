@@ -19,5 +19,10 @@ object Rocket {
       println("Mass: " + mass)
       println("Thrust: " + thrust)
     }
+
+    def convert(unit: String) = {
+      if (unit == "kg") mass / 1000
+      else "Fatal Error: conversion failed"
+    }
   }
 }
