@@ -10,7 +10,7 @@ package ToucanSIM
  */
 object Rocket {
   class Rocket(val mass: Double, val fuelMass: Double, val consumptionRate: Double, val thrust: Double) {
-  	var increment: Double = 0.01
+  	var timeIncrement: Double = 0.01
   	var time: Double = 0.0
   	var height: Double = 0.0
     var totalMass: Double = mass + fuelMass
@@ -43,6 +43,14 @@ object Rocket {
      */
     def currentMass() = {
       if (totalMass >= mass) mass + (fuelMass - (consumptionRate * time))
+    }
+
+    /** Update time
+     *
+     *  @constructor Increments time.
+     */
+    def updateTime() = {
+      time += timeIncrement
     }
 
     def report() {
