@@ -13,6 +13,7 @@ object Rocket {
   	var increment: Double = 0.01
   	var time: Double = 0.0
   	var height: Double = 0.0
+    var totalMass: Double = mass + fuelMass
   	val gravity: Double = -9.8
 
     /** Unit conversion
@@ -20,10 +21,20 @@ object Rocket {
      *  @constructor Converts grams to other units.
      *  @param unit Unit to convert to. (kg or N)
      */
-    def convert(unit: String) = {
-      if (unit == "kg") mass / 1000
-      else if (unit == "N") (mass / 1000) * 9.8
+    def convert(kMass: Double, unit: String) = {
+      if (unit == "kg") kMass / 1000
+      else if (unit == "N") (kMass / 1000) * 9.8
       else "Fatal Error: conversion failed"
+    }
+
+    /** Calculate acceleration
+     *
+     *  @constructor Calculates acceleration.
+     */
+    def acceleration() = {
+      val massNewtons: Double = convert(mass, "N").asInstanceOf[Double]
+      if (totalMass >= mass) (thrust - massNewtons) / convert(totalMass, "kg").asInstanceOf[Double]
+      else -9.8
     }
 
     def report() {
