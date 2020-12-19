@@ -46,8 +46,10 @@ object Rocket {
     }
 
     def report() {
-      println("Mass: " + mass)
-      println("Thrust: " + thrust)
+      println(f"Rocket Mass: $mass g")
+      println(f"Fuel Mass: $fuelMass g")
+      println(f"Consumption Rate: $consumptionRate g/s")
+      println(f"Thrust: $thrust N")
     }
   }
 }

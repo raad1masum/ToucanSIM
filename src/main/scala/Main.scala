@@ -9,4 +9,5 @@ object Main extends App {
   val otherRocket = new Rocket(1000, 100, 60, 10)
 
   val sim = new Simulation(rocket)
+  val otherSim = new Simulation(otherRocket)
 }
