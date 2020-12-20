@@ -14,6 +14,7 @@ object Rocket {
   	var height: Double = 0.0
     var velocity: Double = 0.0
     var timeIncrement: Double = 0.01
+    var acceleration: Double = 0.0
     var totalMass: Double = mass + fuelMass
   	val gravity: Double = -9.8
 
@@ -32,10 +33,13 @@ object Rocket {
      *
      *  @constructor Calculates acceleration.
      */
-    def acceleration() = {
+    def currentAcceleration() = {
       val massNewtons: Double = convert(mass, "N").asInstanceOf[Double]
-      if (totalMass >= mass) (thrust - massNewtons) / convert(totalMass, "kg").asInstanceOf[Double]
-      else -9.8
+      if (totalMass >= mass) {
+        acceleration = (thrust - massNewtons) / convert(totalMass, "kg").asInstanceOf[Double]
+      }
+      else acceleration = -9.8
+      acceleration
     }
 
     /** Calculate current mass
@@ -43,7 +47,8 @@ object Rocket {
      *  @constructor Calculates current mass.
      */
     def currentMass() = {
-      if (totalMass >= mass) mass + (fuelMass - (consumptionRate * time))
+      if (totalMass >= mass) totalMass = mass + (fuelMass - (consumptionRate * time))
+      totalMass
     }
 
     /** Update time
