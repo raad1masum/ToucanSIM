@@ -11,5 +11,5 @@ object Main extends App {
   val sim = new Simulation(rocket)
   val otherSim = new Simulation(otherRocket)
 
-  sim.run()
+  otherSim.run()
 }
