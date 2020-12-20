@@ -21,7 +21,7 @@ object Simulation {
       while (rocket.height >= 0) {
       	time += rocket.time
         mass += rocket.currentMass().asInstanceOf[Double]
-        acceleration += rocket.acceleration().asInstanceOf[Double]
+        acceleration += rocket.currentAcceleration().asInstanceOf[Double]
 
         if (velocity.size > 0) {
         	rocket.velocity	= velocity.last + (acceleration.last * rocket.timeIncrement)
@@ -31,12 +31,28 @@ object Simulation {
 
         velocity += rocket.velocity
 
-        println("Time: " + time.mkString(" "))
-        println("Mass: " + mass.mkString(" "))
-        println("Velocity: " + velocity.mkString(" "))
-        println("Acceleration: " + acceleration.mkString(" "))
+        if (height.size > 0) {
+        	rocket.height = height.last + (velocity.last * rocket.timeIncrement) + (0.5 * acceleration.last * scala.math.pow(rocket.timeIncrement, 2))
+        } else {
+        	rocket.height = 0.0
+        }
 
-        rocket.height - 1
+        height += rocket.height
+        rocket.updateTime()
+
+        // println("Time: " + time.mkString(" "))
+        // println("Mass: " + mass.mkString(" "))
+        // println("Height: " + height.mkString(" "))
+        // println("Velocity: " + velocity.mkString(" "))
+        // println("Velocity: " + velocity.mkString(" "))
+        // println("Acceleration: " + acceleration.mkString(" "))
+
+        // println("Time: " + time.last)
+        // println("Mass: " + mass.last)
+        // println("Height: " + height.last)
+        // println("Velocity: " + velocity.last)
+        // println("Velocity: " + velocity.last)
+        // println("Acceleration: " + acceleration.last)
       }
     }
 
