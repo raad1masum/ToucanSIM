@@ -11,11 +11,11 @@ object Physics {
   class Physics(val simulation: Simulation) {
     def plot {
     	val dataset = new DefaultXYDataset()
-      dataset.addSeries("Series 1", Array(simulation.time.toArray, simulation.velocity.toArray))
+      dataset.addSeries("Series 1", Array(simulation.velocity.toArray, simulation.time.toArray))
 
       val chart: JFreeChart = ChartFactory.createXYLineChart("Velocity vs Time", "Velocity", "Time", dataset, org.jfree.chart.plot.PlotOrientation.HORIZONTAL, false,false,false);
 
-      val out: OutputStream = new FileOutputStream("plots/velocityout.png");
+      val out: OutputStream = new FileOutputStream("plots/velocity_time.png");
       ChartUtilities.writeChartAsPNG(out, chart, 450, 400);
     }
   }
