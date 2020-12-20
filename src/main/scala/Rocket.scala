@@ -33,7 +33,7 @@ object Rocket {
      *
      *  @constructor Calculates acceleration.
      */
-    def currentAcceleration() = {
+    def currentAcceleration = {
       val massNewtons: Double = convert(mass, "N").asInstanceOf[Double]
       if (totalMass >= mass) {
         acceleration = (thrust - massNewtons) / convert(totalMass, "kg").asInstanceOf[Double]
@@ -46,7 +46,7 @@ object Rocket {
      *
      *  @constructor Calculates current mass.
      */
-    def currentMass() = {
+    def currentMass = {
       if (totalMass >= mass) totalMass = mass + (fuelMass - (consumptionRate * time))
       totalMass
     }
@@ -55,7 +55,7 @@ object Rocket {
      *
      *  @constructor Increments time.
      */
-    def updateTime() = {
+    def updateTime = {
       time += timeIncrement
     }
 
@@ -63,7 +63,7 @@ object Rocket {
      *
      *  @constructor Reports rocket profile.
      */
-    def report() {
+    def report {
       println(f"Rocket Mass: $mass g")
       println(f"Fuel Mass: $fuelMass g")
       println(f"Consumption Rate: $consumptionRate g/s")

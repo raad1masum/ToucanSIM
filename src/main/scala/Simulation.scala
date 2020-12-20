@@ -22,12 +22,12 @@ object Simulation {
  		*
  		*  @constructor Runs simulation.
  		*/
-    def run() {
+    def run {
       while (rocket.height >= 0) {
       	// log time, mass, and acceleration
       	time += rocket.time
-        mass += rocket.currentMass().asInstanceOf[Double]
-        acceleration += rocket.currentAcceleration().asInstanceOf[Double]
+        mass += rocket.currentMass.asInstanceOf[Double]
+        acceleration += rocket.currentAcceleration.asInstanceOf[Double]
 
         // update velocity
         if (velocity.size > 0) {
@@ -46,7 +46,7 @@ object Simulation {
         }
 
         height += rocket.height
-        rocket.updateTime()
+        rocket.updateTime
 
         // verbose debug
         // println("Time: " + time.mkString(" "))
