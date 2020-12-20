@@ -9,7 +9,7 @@ import java.io._
 
 object Physics {
   class Physics(val simulation: Simulation) {
-    def plot {
+    def plotVelocity {
     	val dataset = new DefaultXYDataset()
       dataset.addSeries("Series 1", Array(simulation.velocity.toArray, simulation.time.toArray))
 
