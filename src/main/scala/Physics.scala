@@ -38,5 +38,11 @@ object Physics {
       val out: OutputStream = new FileOutputStream("plots/acceleration_time.png");
       ChartUtilities.writeChartAsPNG(out, chart, 450, 400);
     }
+
+    def plotAll {
+    	plotPosition
+    	plotVelocity
+    	plotAcceleration
+    }
   }
 }

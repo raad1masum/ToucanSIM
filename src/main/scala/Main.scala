@@ -10,11 +10,8 @@ object Main extends App {
 
   val sim = new Simulation(rocket)
   val otherSim = new Simulation(otherRocket)
-
   sim.run()
 
   val phys = new Physics(sim)
-  phys.plotPosition
-  phys.plotVelocity
-  phys.plotAcceleration
+  phys.plotAll
 }
