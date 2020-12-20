@@ -12,4 +12,6 @@ object Main extends App {
   val otherSim = new Simulation(otherRocket)
 
   sim.run()
+
+  val phys = new Physics(sim)
 }
