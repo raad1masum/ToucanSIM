@@ -23,9 +23,20 @@ object Simulation {
         mass += rocket.currentMass().asInstanceOf[Double]
         acceleration += rocket.acceleration().asInstanceOf[Double]
 
-        println(time.mkString(" "))
-        println(mass.mkString(" "))
-        println(acceleration.mkString(" "))
+        if (velocity.size > 0) {
+        	rocket.velocity	= velocity.last + (acceleration.last * rocket.timeIncrement)
+        } else {
+        	rocket.velocity = 0.0
+        }
+
+        velocity += rocket.velocity
+
+        println("Time: " + time.mkString(" "))
+        println("Mass: " + mass.mkString(" "))
+        println("Velocity: " + velocity.mkString(" "))
+        println("Acceleration: " + acceleration.mkString(" "))
+
+        rocket.height - 1
       }
     }
 
