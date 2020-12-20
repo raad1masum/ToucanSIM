@@ -14,5 +14,7 @@ object Main extends App {
   sim.run()
 
   val phys = new Physics(sim)
+  phys.plotPosition
   phys.plotVelocity
+  phys.plotAcceleration
 }
