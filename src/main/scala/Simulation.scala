@@ -17,6 +17,11 @@ object Simulation {
     var velocity = ArrayBuffer[Double]()
     var acceleration = ArrayBuffer[Double]()
 
+		/**
+ 		* Run Simulation
+ 		*
+ 		*  @constructor Runs simulation.
+ 		*/
     def run() {
       while (rocket.height >= 0) {
       	time += rocket.time
