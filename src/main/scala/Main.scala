@@ -13,21 +13,30 @@ object Main extends App {
 	// NASA Saturn V
   val SaturnV = new Rocket("NASA Saturn V", 130000000, 615962205.49, 18143695, 33361662.211881433)
 
+  /** Create custom rocket
+   *
+   *  @constructor Creates custom rocket.
+   */
   def custom: Rocket = {
   	println("ToucanSIM Rocket Configurator")
 
+  	// name
   	print("Enter Rocket Name: ")
   	val name: String = scala.io.StdIn.readLine()
 
+  	// mass
   	print("Enter Rocket Mass (grams): ")
   	val mass: Double = scala.io.StdIn.readLine().toDouble
 
+  	// fuel mass
   	print("Enter Fuel Mass (grams): ")
   	val fuelMass: Double = scala.io.StdIn.readLine().toDouble
 
+  	// consumption rate
   	print("Enter Fuel Consumption Rate (grams/second): ")
   	val consumptionRate: Double = scala.io.StdIn.readLine().toDouble
 
+  	// thrust
   	print("Enter Engine Thrust (newtons): ")
   	val thrust: Double = scala.io.StdIn.readLine().toDouble
 
@@ -36,6 +45,11 @@ object Main extends App {
   	customRocket
   }
 
+  /** Run simulation
+   *
+   *  @constructor Runs simulation.
+   *  @param rocket Rocket to run simulation on.
+   */
   def run(rocket: Rocket) {
   	val sim = new Simulation(rocket)
   	val phys = new Physics(sim)
@@ -44,6 +58,7 @@ object Main extends App {
   	phys.plot
   }
 
+  // menu
   println("1. Falcon9")
   println("2. SaturnV")
   println("3. Custom")
@@ -62,5 +77,6 @@ object Main extends App {
   println(f"Running ToucanSIM for $name")
   rocket.report
 
+	// driver
   run(rocket)
 }
