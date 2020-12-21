@@ -61,8 +61,8 @@ object Main extends App {
   }
 
   // menu
-  println("1. Falcon9")
-  println("2. SaturnV")
+  println("1. SpaceX Falcon 9")
+  println("2. NASA Saturn V")
   println("3. Custom")
   print("Select a rocket to simulate: ")
 
