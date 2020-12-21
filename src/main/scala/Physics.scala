@@ -72,7 +72,7 @@ object Physics {
 		/**
  		* Plot data
  		*
- 		*  @constructor Plots rocket data.
+ 		*  @constructor Plots all data.
  		*/
     def plot {
     	plotPosition
