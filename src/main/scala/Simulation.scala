@@ -17,32 +17,32 @@ object Simulation {
     var velocity = ArrayBuffer[Double]()
     var acceleration = ArrayBuffer[Double]()
 
-		/**
- 		* Run Simulation
- 		*
- 		*  @constructor Runs simulation.
- 		*/
+    /**
+     * Run Simulation
+     *
+     *  @constructor Runs simulation.
+     */
     def run {
       while (rocket.height >= 0) {
-      	// log time, mass, and acceleration
-      	time += rocket.time
+        // log time, mass, and acceleration
+        time += rocket.time
         mass += rocket.currentMass.asInstanceOf[Double]
         acceleration += rocket.currentAcceleration.asInstanceOf[Double]
 
         // update velocity
         if (velocity.size > 0) {
-        	rocket.velocity	= velocity.last + (acceleration.last * rocket.timeIncrement)
+          rocket.velocity = velocity.last + (acceleration.last * rocket.timeIncrement)
         } else {
-        	rocket.velocity = 0.0
+          rocket.velocity = 0.0
         }
 
         velocity += rocket.velocity
 
         // update height
         if (height.size > 0) {
-        	rocket.height = height.last + (velocity.last * rocket.timeIncrement) + (0.5 * acceleration.last * scala.math.pow(rocket.timeIncrement, 2))
+          rocket.height = height.last + (velocity.last * rocket.timeIncrement) + (0.5 * acceleration.last * scala.math.pow(rocket.timeIncrement, 2))
         } else {
-        	rocket.height = 0.0
+          rocket.height = 0.0
         }
 
         height += rocket.height

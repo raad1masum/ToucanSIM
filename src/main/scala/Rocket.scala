@@ -1,6 +1,7 @@
 package ToucanSIM
 
-/** Create rocket profile
+/**
+ * Create rocket profile
  *
  *  @constructor Creates rocket profile.
  *  @param mass Mass of rocket. (grams)
@@ -10,15 +11,16 @@ package ToucanSIM
  */
 object Rocket {
   class Rocket(val name: String, val mass: Double, val fuelMass: Double, val consumptionRate: Double, val thrust: Double) {
-  	var time: Double = 0.0
-  	var height: Double = 0.0
+    var time: Double = 0.0
+    var height: Double = 0.0
     var velocity: Double = 0.0
     var timeIncrement: Double = 0.01
     var acceleration: Double = 0.0
     var totalMass: Double = mass + fuelMass
-  	val gravity: Double = -9.8
+    val gravity: Double = -9.8
 
-    /** Unit conversion
+    /**
+     * Unit conversion
      *
      *  @constructor Converts grams to other units.
      *  @param unit Unit to convert to. (kg or N)
@@ -29,7 +31,8 @@ object Rocket {
       else "Fatal Error: conversion failed"
     }
 
-    /** Calculate acceleration
+    /**
+     * Calculate acceleration
      *
      *  @constructor Calculates acceleration.
      */
@@ -37,12 +40,12 @@ object Rocket {
       val massNewtons: Double = convert(mass, "N").asInstanceOf[Double]
       if (totalMass >= mass) {
         acceleration = (thrust - massNewtons) / convert(totalMass, "kg").asInstanceOf[Double]
-      }
-      else acceleration = -9.8
+      } else acceleration = -9.8
       acceleration
     }
 
-    /** Calculate current mass
+    /**
+     * Calculate current mass
      *
      *  @constructor Calculates current mass.
      */
@@ -51,7 +54,8 @@ object Rocket {
       totalMass
     }
 
-    /** Update time
+    /**
+     * Update time
      *
      *  @constructor Increments time.
      */
@@ -59,7 +63,8 @@ object Rocket {
       time += timeIncrement
     }
 
-    /** Report profile
+    /**
+     * Report profile
      *
      *  @constructor Reports rocket profile.
      */
