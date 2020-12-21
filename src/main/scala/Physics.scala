@@ -70,11 +70,11 @@ object Physics {
     }
 
 		/**
- 		* Plot all data
+ 		* Plot data
  		*
  		*  @constructor Plots all data.
  		*/
-    def plotAll {
+    def plot {
     	plotPosition
     	plotVelocity
     	plotAcceleration
