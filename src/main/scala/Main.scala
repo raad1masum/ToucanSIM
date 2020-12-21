@@ -73,10 +73,7 @@ object Main extends App {
     case _  => custom
   }
 
-  val name: String = rocket.name
-  println(f"Running ToucanSIM for $name")
-  rocket.report
-
 	// driver
+  rocket.report
   run(rocket)
 }

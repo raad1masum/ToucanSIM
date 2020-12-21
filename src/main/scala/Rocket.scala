@@ -64,6 +64,7 @@ object Rocket {
      *  @constructor Reports rocket profile.
      */
     def report {
+      println(f"Running ToucanSIM for $name")
       println(f"Rocket Mass: $mass g")
       println(f"Fuel Mass: $fuelMass g")
       println(f"Consumption Rate: $consumptionRate g/s")
